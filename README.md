@@ -25,7 +25,7 @@ If you don't have access to dockerhub and you need to build the images then, aft
 podman build --arch=amd64 -f docker/initial/Dockerfile -t conjur-k8s-mongodb .
 ```
 
-2. Build the `conjur-summon-k8s-demo`
+2. Build the `conjur-k8s-mongodb-summon-demo`
 
 ```shell
 ./mvnw clean package
