@@ -3,13 +3,9 @@ spring:
     mongodb:
       uri: ${MONGODB_URI}
 springdoc:
-  writer-with-order-by-keys: true
   swagger-ui:
     use-root-path: true
 management:
-  endpoint:
-    health:
-      show-details: always
   endpoints:
     web:
       exposure:

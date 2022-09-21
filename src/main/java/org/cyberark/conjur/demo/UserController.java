@@ -7,11 +7,11 @@ package org.cyberark.conjur.demo;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
-
 	private UserRepository userRepository;
 
 	public UserController(UserRepository userRepository) {
@@ -22,4 +22,10 @@ public class UserController {
 	public List<User> list() {
 		return userRepository.findAll();
 	}
+
+	@PostMapping("/user")
+	public void create(User user) {
+		userRepository.save(user);
+	}
+
 }
