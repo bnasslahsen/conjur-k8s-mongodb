@@ -5,5 +5,9 @@ package org.cyberark.conjur.demo;
  */
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+/**
+ * The interface User repository.
+ */
 public interface UserRepository extends MongoRepository<User, Integer> {
 }

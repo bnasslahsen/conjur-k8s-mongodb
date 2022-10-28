@@ -3,6 +3,7 @@ spring:
     mongodb:
       uri: ${MONGODB_URI}
 springdoc:
+  enable-native-support: true
   swagger-ui:
     use-root-path: true
 management:
