@@ -89,7 +89,7 @@
 				<configuration>
 					<image>
 						<name>
-							registry.hub.docker.com/springdocdemos/${project.artifactId}
+							registry.hub.docker.com/bnasslahsen/${project.artifactId}
 						</name>
 						<builder>paketobuildpacks/builder:tiny</builder>
 						<buildpacks>
@@ -103,7 +103,7 @@
 							<BP_BINARY_COMPRESSION_METHOD>gzexe</BP_BINARY_COMPRESSION_METHOD>
 							<BP_JVM_JLINK_ENABLED>true</BP_JVM_JLINK_ENABLED>
 							<BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
-							<BPE_PREPEND_JAVA_TOOL_OPTIONS>-XshowSettings:vm -XX:ReservedCodeCacheSize=2496k -Djava.compiler=none -XX:MaxMetaspaceSize=60M -XX:MaxDirectMemorySize=2M -Xms1M -Xmx40m -Xss256k</BPE_PREPEND_JAVA_TOOL_OPTIONS>
+							<BPE_PREPEND_JAVA_TOOL_OPTIONS>-XX:ReservedCodeCacheSize=2496k -Djava.compiler=none -XX:MaxMetaspaceSize=5M -XX:MaxDirectMemorySize=2M -Xms1M -Xmx35m -Xss256k</BPE_PREPEND_JAVA_TOOL_OPTIONS>
 						</env>
 					</image>
 					<docker>
