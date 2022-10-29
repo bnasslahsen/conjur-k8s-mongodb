@@ -86,6 +86,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+              <configuration>
+      <image>
+            <builder>paketobuildpacks/builder:tiny</builder>
+              <buildpacks>
+              <buildpack>gcr.io/paketo-buildpacks/bellsoft-liberica:9.9.0-ea</buildpack>
+              <buildpack>gcr.io/paketo-buildpacks/java-native-image</buildpack>
+            </buildpacks>
+          </image>  
+<env>
+  <BP_BINARY_COMPRESSION_METHOD>gzexe</BP_BINARY_COMPRESSION_METHOD>
+  <BP_JVM_JLINK_ENABLED>true</BP_JVM_JLINK_ENABLED>
+	<BPE_DELIM_JAVA_TOOL_OPTIONS xml:space="preserve"> </BPE_DELIM_JAVA_TOOL_OPTIONS>
+	<BPE_PREPEND_JAVA_TOOL_OPTIONS>-XX:ReservedCodeCacheSize=2496k -Djava.compiler=none -XX:MaxMetaspaceSize=60M -XX:MaxDirectMemorySize=2M -Xms1M -Xmx40m -Xss256k</BPE_PREPEND_JAVA_TOOL_OPTIONS>
+</env>
+
+         </configuration>
+
 			</plugin>
 		</plugins>
 	</build>
