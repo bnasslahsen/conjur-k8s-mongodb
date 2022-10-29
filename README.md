@@ -31,3 +31,11 @@ podman build --arch=amd64 -f docker/initial/Dockerfile -t conjur-k8s-mongodb .
 ./mvnw clean package
 podman build --arch=amd64 -f docker/summon/Dockerfile -t conjur-k8s-mongodb-summon-demo .
 ```
+
+2. For Native Builds
+
+```shell
+mvn -Pnative clean spring-boot:build-image
+docker run -d --rm -p 8080:8080 -e MONGODB_URI='mongodb://ip-10-0-9-181.eu-west-2.compute.internal:27017/admin' conjur-k8s-mongodb:2.0
+```
+
