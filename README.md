@@ -32,10 +32,17 @@ podman build --arch=amd64 -f docker/initial/Dockerfile -t conjur-k8s-mongodb .
 podman build --arch=amd64 -f docker/summon/Dockerfile -t conjur-k8s-mongodb-summon-demo .
 ```
 
-2. For Native Builds
+3. For Native Builds
 
 ```shell
 mvn -Pnative clean spring-boot:build-image
 docker run -d --rm -p 8080:8080 -e MONGODB_URI='mongodb://ip-10-0-9-181.eu-west-2.compute.internal:27017/admin' conjur-k8s-mongodb:2.0
 ```
 
+4. For Native Builds
+
+```shell
+podman  build  --arch=amd64  -t run:small-cnb .
+podman tag run:small-cnb  docker.io/bnasslahsen/run:small-cnb
+podman push docker.io/bnasslahsen/run:small-cnb
+```
