@@ -93,6 +93,7 @@
 						</name>
 						<tags><tag>docker.io/bnasslahsen/${project.artifactId}:${project.version}</tag></tags>
 						<builder>paketobuildpacks/builder:tiny</builder>
+						<runImage>docker.io/bnasslahsen/run:small-cnb</runImage>
 						<buildpacks>
 							<buildpack>
 								gcr.io/paketo-buildpacks/bellsoft-liberica:9.9.0-ea
