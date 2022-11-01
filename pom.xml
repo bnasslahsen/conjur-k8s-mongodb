@@ -101,9 +101,6 @@
 							<buildpack>gcr.io/paketo-buildpacks/java-native-image
 							</buildpack>
 						</buildpacks>
-						<env>
-							<BP_NATIVE_IMAGE_BUILD_ARGUMENTS>-R:MinHeapSize=2m -R:MaxHeapSize=10m -R:MaxNewSize=1m</BP_NATIVE_IMAGE_BUILD_ARGUMENTS>
-					        </env>
 						<publish>true</publish>
 						<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 					</image>
@@ -115,7 +112,6 @@
 						</publishRegistry>
 					</docker>
 				</configuration>
-
 			</plugin>
 		</plugins>
 	</build>
